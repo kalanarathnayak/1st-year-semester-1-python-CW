@@ -1,6 +1,6 @@
 # I declare that my work contains no examples of misconduct, such as plagiarism, or collusion.
 # Any code taken from other sources is referenced within my code solution.
-# Student ID: w1903043 
+# Student ID: w1903043
 # Date: 17/04/2022
 
 # declaration of global scope variables
@@ -23,12 +23,13 @@ def validation(credit_cat):
             continue
         else:
             return usr_input
-            
+
 
 print("Staff Version with Vertical Histogram Extension\n")
 while continuation == "y":
     while True:
-        credit_p, credit_d, credit_f = validation("pass "), validation("defer"), validation("fail ")
+        credit_p, credit_d, credit_f = validation(
+            "pass "), validation("defer"), validation("fail ")
         credit_t = credit_p + credit_d + credit_f
         # validation of the total credit(the total should be equal to 120)
         if credit_t == 120:
@@ -63,7 +64,7 @@ while continuation == "y":
             continue
         else:
             break
-        
+
     if continuation == "q":
         # if the user input is q then print the horizontal histogram
         print("-"*52)
@@ -91,7 +92,8 @@ def alig_spec(progression_s):
     return al_val
 
 
-al1, al2, al3 = alig_spec(progress_count), alig_spec(trailer_count), alig_spec(retriever_count)
+al1, al2, al3 = alig_spec(progress_count), alig_spec(
+    trailer_count), alig_spec(retriever_count)
 # printing the stars vertically
 # https://stackoverflow.com/questions/53285446/how-do-i-make-print-vertically-on-python-loops
 # referred the above webpage to find out how to print an object vertically using a loop
@@ -101,5 +103,5 @@ for row in range(max(progress_count, trailer_count, retriever_count, exclude_cou
           f'{"*":>{al2}}' if row < retriever_count else f'{" ":>{al2}}',
           f'{"*":>{al3}}' if row < exclude_count else f'{" ":>{al3}}')
 print("")
-print(total_count, "outcomes in total.") 
+print(total_count, "outcomes in total.")
 print("-"*52)
